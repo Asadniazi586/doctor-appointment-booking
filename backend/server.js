@@ -24,4 +24,6 @@ app.use('/api/payment',userRouter)
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
-app.listen(port,()=>console.log('server started!', port))
+app.listen(port, '0.0.0.0', () => {
+    console.log('Server started on port', port)
+})
