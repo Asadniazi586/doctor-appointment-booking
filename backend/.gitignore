@@ -1,0 +1,19 @@
+# Environment
+.env
+.env.local
+.env.production
+.env.development
+
+# Dependencies
+node_modules/
+
+# Build
+dist/
+
+# Logs
+*.log
+
+# Backend specific
+uploads/
+temp/
+coverage/
