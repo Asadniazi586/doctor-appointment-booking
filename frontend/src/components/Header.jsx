@@ -51,32 +51,49 @@ const Header = () => {
   }, [])
 
   return (
-    <div className='flex flex-col md:flex-row flex-wrap bg-primary rounded-lg px-6 md:px-10 lg:px-15'>
-      {/* .....Left side..... */}
-      <div className='md:w-1/2 flex flex-col lg:mt-[-40px] lg:mb-[-10px] items-start justify-center gap-4  m-auto md:py-[10vw] md:mb-[-30px]'>
-        <p className='text-2xl md:text-3xl lg:text-[32px] text-white font-semibold leading-tight md:leading-tight lg:leading-tight'>
-        <span className='lg:text-[35px]'>Schedule Your Appointments</span><br /> With our{' '}
-          <span className={`${words[wordIndex].color}`}>
+    <div className='flex flex-col md:flex-row bg-primary rounded-lg px-4 sm:px-6 md:px-8 lg:px-12 py-6 md:py-4 overflow-hidden'>
+      {/* Left side */}
+      <div className='w-full md:w-1/2 flex flex-col items-center md:items-start justify-center gap-3 md:gap-4 text-center md:text-left'>
+        <p className='text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-semibold leading-snug md:leading-tight px-2'>
+          <span className='block sm:inline'>Schedule Your Appointments</span>{' '}
+          <span className='block sm:inline'>With our</span>{' '}
+          <span className={`${words[wordIndex].color} inline-block min-w-[140px] sm:min-w-[160px] md:min-w-[180px]`}>
             {displayed}
-            <span className='inline-block w-[1px]'>
+            <span className='inline-block w-[2px] ml-0.5'>
               {cursorVisible ? '|' : ' '}
             </span>
           </span>
         </p>
-        <div className='flex flex-col mt-2 md:flex-row items-center gap-3 text-white text-sm font-light'>
+        
+        <div className='flex flex-col items-center md:items-start gap-2 text-white text-xs sm:text-sm font-light max-w-[90%] md:max-w-full px-2'>
           <p>
-            Experience seamless access to qualified and experienced doctors at Alfazal Hospital. <br className='hidden sm:block' />
+            Experience seamless access to qualified and experienced doctors at Alfazal Hospital.
+          </p>
+          <p className='hidden sm:block'>
             Book your consultations effortlessly—quick, secure, and hassle-free healthcare at your convenience.
           </p>
+          {/* Mobile-only shorter text */}
+          <p className='block sm:hidden'>
+            Quick, secure, and hassle-free healthcare at your convenience.
+          </p>
         </div>
-        <a className='flex items-center gap-2 bg-white px-8 py-3 rounded-full text-gray-600 text-sm m-auto md:m-0 lg:mb-[-20px] hover:scale-105 transition-all duration-300' href="#speciality">
-          Get Started <img className='w-3' src={assets.arrow_icon} alt="" />
+        
+        <a 
+          className='flex items-center gap-2 bg-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-gray-600 text-sm hover:scale-105 transition-all duration-300 shadow-md mt-2 md:mt-4' 
+          href="#speciality"
+        >
+          Get Started 
+          <img className='w-2.5 sm:w-3' src={assets.arrow_icon} alt="" />
         </a>
       </div>
 
-      {/* .....Right side..... */}
-      <div className='md:w-1/2 relative '>
-        <img className='w-full md:absolute bottom-7 h-85 rounded-lg ml-7' src={assets.grp} alt="" />
+      {/* Right side - Image */}
+      <div className='w-full md:w-1/2 mt-6 md:mt-0 flex justify-center md:justify-end'>
+        <img 
+          className='w-3/4 sm:w-2/3 md:w-full max-w-md md:max-w-none h-auto object-contain rounded-lg' 
+          src={assets.grp} 
+          alt="Medical professionals" 
+        />
       </div>
     </div>
   )
